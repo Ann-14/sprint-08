@@ -1,7 +1,17 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
+import { useParams } from 'react-router-dom'
+import { useGlobalContext } from '../Context'
 
 export const SingleSpaceShip = () => {
-  return (
-    <div>SingleSpaceShip</div>
-  )
+  const {id} = useParams()
+  const {shipName,shipModel,spaceShips} = useGlobalContext()
+
+
+  
+
+return (
+  <section >
+    
+  </section>
+);
 }

@@ -1,7 +1,12 @@
 import React from 'react'
+import { SearchForm } from '../components/SearchForm'
+import { SpaceShipsList } from '../components/SpaceShipsList'
 
 export const Home = () => {
   return (
-    <div>Home</div>
+    <main>
+    <SearchForm />
+    <SpaceShipsList />
+   </main>
   )
 }
