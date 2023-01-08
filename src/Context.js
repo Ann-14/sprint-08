@@ -1,42 +1,54 @@
 import React, { useContext, useEffect, useState } from 'react'
+import axios from "axios";
 
 
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
-    // const [searchTerm, setSearchTerm] = useState('2')
+
     const [loading, setLoading] = useState(true)
     const [spaceShips, setSpaceShips] = useState([])
-const [shipName, setShipName] = useState('')
-const [shipModel, setShipModel] = useState('')
+    const [pages, setPages] = useState(1)
 
-  const url = 'https://swapi.py4e.com/api/starships/'
-    const fetchSpaceShips = async () => {
+    const handleNextPage = () => {
+        setPages(pages => pages + 1)
+    }
+    const handlePreviousPage = () => {
+        setPages(pages => pages - 1)
+    }
+
+    const fetchSpaceShips = async (page) => {
         setLoading(true)
         try {
-            // const response = await fetch(`${url}${searchTerm}`)
-            // const response = await fetch(`${url}`)
-            const response = await fetch (`${url}`)
-            const data = await response.json()
-            
-            const { results } = data;
-            
-            // console.log(results)
+
+            // const response = await axios.get(`${url}`)
+            const response = await axios.get(`https://swapi.dev/api/starships/?page=${page}`)
+            const { results } = response.data;
+            console.log(results)
+
             if (results) {
 
                 const newSpaceShips =
                     results.map((item) => {
-                        const { name, model,url } = item
+                        const {
+                            name,
+                            model,
+                            url,
+                            manufacturer,
+                            max_atmosphering_speed: max_speed,
+                            cost_in_credits: cost,
+                            length,
+                            passengers
+                        } = item
                         return {
-                            name, model,url
+                            name, model, url, manufacturer, max_speed, cost, length, passengers
                         }
                     })
-                    
-                   
+
+
 
                 setSpaceShips(newSpaceShips)
-                setShipModel(newSpaceShips.model)
-                setShipModel(newSpaceShips.name)
+
 
 
             } else {
@@ -51,24 +63,19 @@ const [shipModel, setShipModel] = useState('')
 
 
     useEffect(() => {
-        fetchSpaceShips()
-       
-                              
-    }, [])
+        fetchSpaceShips(pages)
 
 
-console.log(shipModel)
+    }, [pages])
+
 
     return (
         <AppContext.Provider value={{
             loading,
             spaceShips,
-            shipModel,
-            shipName,
-           
-            url
-            // searchTerm,
-            // setSearchTerm
+            handleNextPage,
+            handlePreviousPage,
+
         }}>
             {children}
         </AppContext.Provider>

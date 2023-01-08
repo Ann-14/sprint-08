@@ -5,7 +5,7 @@ import { SpaceShip } from './SpaceShip'
 
 
 export const SpaceShipsList = () => {
-const {spaceShips,loading} = useGlobalContext()
+const {spaceShips,loading,handleNextPage,handlePreviousPage} = useGlobalContext()
 console.log(spaceShips)
 
 if(loading){
@@ -28,6 +28,8 @@ return (
         })
       }
     </div>
+    <button onClick={handleNextPage}>Next ➡ </button>
+    <button onClick={handlePreviousPage}>Back ⬅</button>
   </div>
 )
 }
