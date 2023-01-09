@@ -9,6 +9,8 @@ const AppProvider = ({ children }) => {
     const [loading, setLoading] = useState(true)
     const [spaceShips, setSpaceShips] = useState([])
     const [pages, setPages] = useState(1)
+    const [urlShip, setUrlShip] = useState("");
+    const [shipIdContext, setShipIdContext] = useState('')
 
     const handleNextPage = () => {
         setPages(pages => pages + 1)
@@ -20,8 +22,6 @@ const AppProvider = ({ children }) => {
     const fetchSpaceShips = async (page) => {
         setLoading(true)
         try {
-
-            // const response = await axios.get(`${url}`)
             const response = await axios.get(`https://swapi.dev/api/starships/?page=${page}`)
             const { results } = response.data;
             console.log(results)
@@ -45,11 +45,7 @@ const AppProvider = ({ children }) => {
                         }
                     })
 
-
-
                 setSpaceShips(newSpaceShips)
-
-
 
             } else {
                 setSpaceShips([])
@@ -75,6 +71,11 @@ const AppProvider = ({ children }) => {
             spaceShips,
             handleNextPage,
             handlePreviousPage,
+            urlShip,
+            setUrlShip,
+            shipIdContext,
+            setShipIdContext
+            
 
         }}>
             {children}

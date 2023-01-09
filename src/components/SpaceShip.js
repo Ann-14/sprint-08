@@ -3,7 +3,7 @@ import logo from '../logo.png'
 
 
 
-export const SpaceShip = ({name,model,url,max_speed,cost,length}) => {
+export const SpaceShip = ({name,model,url,}) => {
   
 let shipId;
   if(url.length === 34){ 
@@ -11,10 +11,10 @@ let shipId;
   } else{
     shipId = (url.slice(url.length-3,url.length-1))
   }
+console.log(shipId)
 
-console.log('URL', url.length-1)
 const imageUrl = `https://starwars-visualguide.com/assets/img/starships/${shipId}.jpg`;
-console.log('imgurl', imageUrl)
+
 
 //replacement of broken Image
 const replaceImage = (error) => {
@@ -28,7 +28,7 @@ const replaceImage = (error) => {
       <h3>{name}</h3>
       <h4>{model}</h4>
      <img onError={replaceImage}  src={imageUrl}  alt='starship '/> 
-      <Link to={`/spaceship/${shipId}`} > details</Link>
+      <Link to={`/spaceship/${shipId}`}>details</Link>
     </div>
   </article>
   )
