@@ -1,12 +1,13 @@
 import React from 'react'
-import { SearchForm } from '../components/SearchForm'
+// import { SearchForm } from '../components/SearchForm'
 import { SpaceShipsList } from '../components/SpaceShipsList'
 
-export const Home = () => {
+
+export const HomePage = () => {
+  
   return (
-    <main>
-    <SearchForm />
+    <>
     <SpaceShipsList />
-   </main>
+   </>
   )
 }

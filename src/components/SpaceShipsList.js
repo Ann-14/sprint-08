@@ -5,7 +5,7 @@ import { SpaceShip } from './SpaceShip'
 
 
 export const SpaceShipsList = () => {
-const {spaceShips,loading,handleNextPage,handlePreviousPage,setUrlShip} = useGlobalContext()
+const {loading,spaceShips,handleNextPage,handlePreviousPage,setUrlShip} = useGlobalContext()
 
 if(loading){
   return <Loading />
@@ -23,7 +23,6 @@ return (
     <div>
       {
         spaceShips.map((item,index) => {
-          setUrlShip(item.url)
           return <SpaceShip key={index} id={index} {...item} />
         })
       }

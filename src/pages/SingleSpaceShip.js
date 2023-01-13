@@ -2,14 +2,14 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Loading } from "../components/Loading";
 import { useParams } from "react-router-dom";
+import logo from '../logo.png'
 
 export const SingleSpaceShip = () => {
   const [loading, setLoading] = useState(false);
   const [ships, setShips] = useState([]);
   const [imgUrl, setImgUrl] = useState();
-
-  
   let shipId = useParams();
+  
   useEffect(() => {
     setLoading(true);
     try {
@@ -33,9 +33,13 @@ export const SingleSpaceShip = () => {
     return <Loading />
   }
   
+  //replacement of broken Image
+const replaceImage = (error) => {
+  error.target.src = logo 
+}
   return (
     <>
-      <img src={imgUrl} alt={ships.name} />
+      <img onError={replaceImage} src={imgUrl} alt={ships.name} />
 
       <h1>{ships.name}</h1>
 
