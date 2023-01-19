@@ -14,13 +14,12 @@ let shipId;
 
 
   return (
-    <article >
-    <div>
-    </div>
-    <div >
-      <h3>{name}</h3>
-      <h4>{model}</h4>
-      <Link to={`/spaceship/${shipId}`}>details</Link>
+    <article className='' >
+    
+    <div className='flex flex-col bg-gray-700 gap-2 mt-2 text-gray-300  py-2' >
+      <div>{name}</div>
+      <div>{model}</div>
+      <Link to={`/spaceship/${shipId}`} className='flex justify-end px-2'>details</Link>
     </div>
   </article>
   )

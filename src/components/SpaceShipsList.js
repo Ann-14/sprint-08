@@ -18,17 +18,17 @@ No spaceships matched your search criteria
   )
 }
 return (
-  <div>
-    <h2>spaceShips</h2>
+  
+    <article className=''>
     <div>
       {
         spaceShips.map((item,index) => {
           return <SpaceShip key={index} id={index} {...item} />
         })
       }
-    </div>
     <button onClick={handleNextPage}>Next ➡ </button>
     <button onClick={handlePreviousPage}>Back ⬅</button>
-  </div>
+    </div>
+    </article>
 )
 }
