@@ -9,10 +9,7 @@ export const Navbar = () => {
   const navigate = useNavigate()
 
   const handleLogout = () =>{
-    navigate('/login', {
-      replace:true
-    })
-    logout();
+    
   }
 
   return (

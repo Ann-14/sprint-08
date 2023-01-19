@@ -1,21 +1,13 @@
-import React, { useContext, useEffect, useReducer, useState } from 'react'
+import React, { useContext, useEffect, useState } from 'react'
 import axios from "axios";
-import { authReducer } from './auth/authReducer';
-import { types } from './auth/types/types';
 
 
 const AppContext = React.createContext()
 
 
 
-const init = () =>{
-    const user = JSON.parse(localStorage.getItem('user'))
-    return {
-        logged:!!user,
-        user:user,
-    }
 
-}
+
 const AppProvider = ({ children }) => {
 
     const [loading, setLoading] = useState(true)
@@ -78,25 +70,10 @@ const AppProvider = ({ children }) => {
     }, [pages])
 
 //authentication with useReducer
-    const [authState, dispatch] = useReducer(authReducer,{},init);
+  
 
     
-    const login = (name='') =>{
-        const user = {id:'abc', name}
-        const action = {
-            type:types.login,
-            payload:user
-        }
-        localStorage.setItem('user',JSON.stringify(user) )
-
-        dispatch(action)
-    }
-
-const logout = () =>{
-    localStorage.removeItem('user')
-    const action = {type:types.logout}
-    dispatch(action)
-}
+    
 
     return (
         <AppContext.Provider value={{
@@ -108,9 +85,8 @@ const logout = () =>{
             setUrlShip,
             shipIdContext,
             setShipIdContext,
-            ...authState,
-            login:login,
-            logout,
+            
+            
             
 
         }}>
