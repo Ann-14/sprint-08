@@ -74,7 +74,7 @@ export const Login = () => {
                 <div className="flex flex-row justify-between">
                     <div>
                         <label htmlFor="remember" className="">
-                            <input type="checkbox" id="remember" className="w-4 h-4 border-slate-200 focus:bg-indigo-600" />
+                            <input type="checkbox" id="remember" className="w-4 h-4 border-slate-200 focus:bg-indigo-600 mr-2" />
                             Remember me
                         </label>
                     </div>
