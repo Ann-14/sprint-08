@@ -55,7 +55,7 @@ export const Navbar = () => {
                         {currentUser ?
                            <button variant='link' onClick={handleLogout}>LOG OUT</button> : <Link to='/login'  className='flex'> <CiLogin className='login-icon'></CiLogin>LOG IN</Link>}
                      </button>
-                     <button className="bg-transparent text-gray-200  p-2 rounded border border-gray-300 mr-4  hover:text-gray-700  hover:bg-indigo-500 flex"><Link to='/signup'>SIGN UP</Link></button>
+                     <button className="bg-transparent p-2 rounded border border-gray-300 mr-4 hover:bg-yellow-400 hover:text-black"><Link to='/signup'>SIGN UP</Link></button>
                   </div>
                </div>
 
@@ -64,13 +64,13 @@ export const Navbar = () => {
          {/* ------------Hero section links------------*/}
          <section>
             <ul className="flex list-none gap-3  md:text-2xl p-2 mt-4 md:justify-center md:mb-5">
-               <li><Link to='/' className="no-underline list-none md:m-5 hover:text-indigo-400 ">HOME</Link></li>
-               <li><Link to='/homePage' className="no-underline list-none   md:m-5 hover:text-indigo-400 ">SPACESHIPS</Link></li>
-               <li><Link to='/update-profile' className="no-underline list-none md:m-5 hover:text-indigo-400 ">MY PROFILE</Link></li>
-               <li><Link to='/' className="no-underline list-none hover:text-indigo-400  md:m-5">DISNEY +</Link></li>
-               <li><Link to='/' className="no-underline list-none hover:text-indigo-400  md:m-5">INTERACTIVE</Link></li>
-               <li><Link to='/' className="no-underline list-none hover:text-indigo-400  md:m-5">KIDS</Link></li>
-               <li><Link to='/' className="no-underline list-none hover:text-indigo-400  md:m-5">SERIES</Link></li>
+               <li><Link to='/' className="no-underline list-none md:m-5 hover:text-yellow-400 ">HOME</Link></li>
+               <li><Link to='/homePage' className="no-underline list-none   md:m-5 hover:text-yellow-400">SPACESHIPS</Link></li>
+               <li><Link to='/update-profile' className="no-underline list-none md:m-5 hover:text-yellow-400">MY PROFILE</Link></li>
+               <li><Link to='/' className="no-underline list-none hover:text-yellow-400  md:m-5">DISNEY +</Link></li>
+               <li><Link to='/' className="no-underline list-none hover:text-yellow-400  md:m-5">INTERACTIVE</Link></li>
+               <li><Link to='/' className="no-underline list-none hover:text-yellow-400  md:m-5">KIDS</Link></li>
+               <li><Link to='/' className="no-underline list-none hover:text-yellow-400  md:m-5">SERIES</Link></li>
             </ul>
          </section>
       </header>

@@ -33,13 +33,13 @@ export const Login = () => {
     }
     return (
         <>
-            <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
+            <div className="max-w-lg mx-auto my-10  p-8 rounded-xl shadow shadow-slate-300">
         <h1 className="text-4xl font-medium">Login</h1>
         <p className="text-slate-500">Hi, Welcome back 👋</p>
         {error &&
                     <>
                         <div>
-                            <div className="max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg  mb-3 ml-3" role="alert">
+                            <div className="max-w-xs bg-red-500 text-sm text-black rounded-md shadow-lg  mb-3 ml-3" role="alert">
                                 <div className="flex p-4">
                                     {error}
 
@@ -65,11 +65,11 @@ export const Login = () => {
             <div className="flex flex-col space-y-5">
                 <label htmlFor="email">
                     <p className="font-medium text-slate-700 pb-2">Email address</p>
-                    <input id="email" name="email" type="email" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter email address" onChange={(e) => setEmail(e.target.value)}/>
+                    <input id="email" name="email" type="email" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow text-black" placeholder="Enter email address" onChange={(e) => setEmail(e.target.value)}/>
                 </label>
                 <label htmlFor="password">
                     <p className="font-medium text-slate-700 pb-2">Password</p>
-                    <input id="password" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
+                    <input id="password" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow text-black" placeholder="Enter your password" onChange={(e) => setPassword(e.target.value)} />
                 </label>
                 <div className="flex flex-row justify-between">
                     <div>
