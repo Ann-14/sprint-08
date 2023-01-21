@@ -5,6 +5,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { auth } from "../firebase";
 import { updateEmail, updatePassword } from "firebase/auth";
 import { useAuth } from './AuthContext'
+import { TfiEmail } from 'react-icons/tfi';
 
 
 export const UpdateProfile = () => {
@@ -43,13 +44,14 @@ export const UpdateProfile = () => {
     }
     return (
         <>
-            <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
-                <h1 className="text-4xl font-medium">Update Profile</h1>
+            <div className="max-w-lg mx-auto my-10  p-8 rounded-xl shadow shadow-slate-300 text-black bg-black">
+                <h1 className="text-4xl font-medium text-slate-200">Update Profile</h1> 
+                <h3 className='text-slate-200 flex mt-2'><TfiEmail className='mr-2 mt-1'>Email:</TfiEmail> {currentUser.email}</h3>
 
                 {error &&
                     <>
                         <div>
-                            <div className="max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg  mb-3 ml-3" role="alert">
+                            <div className="max-w-xs bg-red-500 text-sm text-slate-200 rounded-md shadow-lg  mb-3 ml-3" role="alert">
                                 <div className="flex p-4">
                                     {error}
 
@@ -69,15 +71,15 @@ export const UpdateProfile = () => {
                 <form action="" className="my-10" onSubmit={handleSubmit}>
                     <div className="flex flex-col space-y-5">
                         <label htmlFor="email">
-                            <p className="font-medium text-slate-700 pb-2">Email address</p>
+                            <p className="font-medium text-slate-200 pb-2">Email address</p>
                             <input id="email" name="email" type="email" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter email address" ref={emailRef} defaultValue={currentUser.email} required />
                         </label>
                         <label htmlFor="password">
-                            <p className="font-medium text-slate-700 pb-2">Password</p>
+                            <p className="font-medium text-slate-200 pb-2">Password</p>
                             <input id="password" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" ref={passwordRef} placeholder='leave blank to keep the same' />
                         </label>
                         <label htmlFor="passwordConf">
-                            <p className="font-medium text-slate-700 pb-2">Password Confirmation</p>
+                            <p className="font-medium text-slate-200 pb-2">Password Confirmation</p>
                             <input id="passwordConf" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" ref={passwordConfirmRef} placeholder='leave blank to keep the same' />
                         </label>
                         <div className="flex flex-row justify-between">
