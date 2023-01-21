@@ -6,11 +6,11 @@ import img4 from '../star-wars-g9af12affb_1920.jpg'
 import img5 from '../star-wars-g7c02c60f3_1920.jpg'
 import img6 from '../at-at-gb50a1f405_1920.jpg'
 import img7 from '../scale.jfif'
+import Spline from '@splinetool/react-spline';
+
+
 
 export const Welcome = () => {
-  // set the default active slide to the first one
- const [index, setIndex] = useState(1)
-  
   return (
     <>
       <div className='text-white'>
@@ -66,13 +66,21 @@ export const Welcome = () => {
             </div>
           </div>
         </section>
+
         {/* Testimonials Section */}
+        <section>
+          <div className="container mx-auto px-6 py-20">
+            <Spline scene="https://prod.spline.design/xQQhJK38eEshsx5c/scene.splinecode" />
+          </div>
+        </section>
+
+
         <section>
           <div className="container mx-auto px-6 py-20">
             <h2 className="text-4xl font-bold text-center text-gray-300 mb-10">
               ALL OF YOUR STAR WARS FAVORITES NOW STREAMING ON DISNEY+
             </h2>
-            <div className="flex ">
+            <div className="flex flex-col md:flex-row gap-4 md:gap-1">
               <div className="w-full md:w-1/3 px-8">
                 <img src={img4} alt="Syncing" />
               </div>
@@ -87,25 +95,13 @@ export const Welcome = () => {
         </section>
 
         {/* test */}
-        
-   <section>
-
- 
-   </section>
-
-
-
-
-
-
-
 
 
         {/* Footer*/}
-        <footer className="bg-black text-center">
-          <div className="px-6 pt-6">
+        <footer className="bg-black text-center ">
+          <div className="px-6 pt-6 ">
             <form action="">
-              <div className=" md:grid-cols-3 gird-cols-1 gap-4 flex justify-center items-center">
+              <div className=" md:grid-cols-3 gird-cols-1 gap-4 flex flex-col  md:flex-row justify-center items-center">
                 <div className="md:ml-auto md:mb-6">
                   <p className="text-gray-200">
                     <strong>Sign up for our newsletter</strong>

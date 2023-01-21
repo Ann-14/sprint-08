@@ -33,12 +33,13 @@ setLoading(false)
  }
     return (
         <>
-            <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
+
+            <div className="max-w-lg mx-auto my-20 border  p-8 rounded-xl shadow shadow-slate-300 text-slate-200">
         <h1 className="text-4xl font-medium">Sign up</h1>
         {error &&
                     <>
                         <div>
-                            <div className="max-w-xs bg-red-500 text-sm text-white rounded-md shadow-lg  mb-3 ml-3" role="alert">
+                            <div className="max-w-xs bg-red-500 text-sm text-black rounded-md shadow-lg  mb-3 ml-3" role="alert">
                                 <div className="flex p-4">
                                     {error}
 
@@ -57,23 +58,23 @@ setLoading(false)
                 }
 
         <div className="my-5">
-            <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg text-slate-700 hover:border-slate-400 hover:text-slate-900 hover:shadow transition duration-150">
-                <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6" alt="" /> <span>Login with Google</span>
+            <button className="w-full text-center py-3 my-3 border flex space-x-2 items-center justify-center border-slate-200 rounded-lg  text-slate-200 hover:border-yellow-500 hover:shadow transition duration-150">
+                <img src="https://www.svgrepo.com/show/355037/google.svg" className="w-6 h-6 text-slate-200" alt="" /> <span>Login with Google</span>
             </button>
         </div>
         <form action="" className="my-10" onSubmit={handleSubmit}>
             <div className="flex flex-col space-y-5">
                 <label htmlFor="email">
-                    <p className="font-medium text-slate-700 pb-2">Email address</p>
-                    <input id="email" name="email" type="email" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter email address" ref={emailRef} required/>
+                    <p className="font-medium text-slate-200 pb-2">Email address</p>
+                    <input id="email" name="email" type="email" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow text-black" placeholder="Enter email address" ref={emailRef} required/>
                 </label>
                 <label htmlFor="password">
-                    <p className="font-medium text-slate-700 pb-2">Password</p>
-                    <input id="password" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter your password" ref={passwordRef} required   />
+                    <p className="font-medium text-slate-200 pb-2">Password</p>
+                    <input id="password" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow text-black" placeholder="Enter your password" ref={passwordRef} required   />
                 </label>
                 <label htmlFor="password">
-                    <p className="font-medium text-slate-700 pb-2">Password Confirmation</p>
-                    <input id="passwordConf" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow" placeholder="Enter your password" ref={passwordConfirmRef} required  />
+                    <p className="font-medium text-slate-200 pb-2">Password Confirmation</p>
+                    <input id="passwordConf" name="password" type="password" className="w-full py-3 border border-slate-200 rounded-lg px-3 focus:outline-none focus:border-slate-500 hover:shadow text-black" placeholder="Enter your password" ref={passwordConfirmRef} required  />
                 </label>
                
                 <button className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center" disabled={loading} type='submit'>Sign up
