@@ -1,5 +1,5 @@
 
-import { Route,  Routes } from "react-router-dom";
+import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
 import { AppProvider } from "./Context";
 import AuthProvider from "./pages/AuthContext";
@@ -11,47 +11,40 @@ import PrivateRoute from "./pages/PrivateRoute";
 import { PublicRoute } from "./pages/PublicRoute";
 import { Signup } from "./pages/Signup";
 import { SingleSpaceShip } from "./pages/SingleSpaceShip";
-import {UpdateProfile} from "./pages/UpdateProfile";
+import { UpdateProfile } from "./pages/UpdateProfile";
 import { Welcome } from "./pages/Welcome";
 
 
 function App() {
 
   return (
-<>
-<AuthProvider>
-<AppProvider>
-<Navbar/>
-<Routes>
-
-<Route path="login" element={
-  <PublicRoute>
-    <Login></Login>
-  </PublicRoute>
-} />
-
-<Route path="/" element={<Welcome />} ></Route>
-<Route path="/HomePage" element={
-  <PrivateRoute>
-    <HomePage></HomePage>
-  </PrivateRoute>
-} />
-{/* <Route path="/HomePage" element={<HomePage/>} />*/}
-<Route path="/update-profile" element={
-       <PrivateRoute>
-       <UpdateProfile />
-     </PrivateRoute>
-     
-    }/>
-<Route path="spaceship/:id" element={<SingleSpaceShip/>} />
-<Route path='*' element={<ErrorPage />} />
-<Route path="/forgot-password" element={<ForgotPassword/>}/>
-<Route path="/signup" element={<Signup/>}/>
-</Routes>
-</AppProvider>
-</AuthProvider>
-</>
-  
+    <AuthProvider>
+      <AppProvider>
+        <Navbar />
+        <Routes>
+          <Route path="login" element={
+            <PublicRoute>
+              <Login></Login>
+            </PublicRoute>
+          } />
+          <Route path="/" element={<Welcome />} ></Route>
+          <Route path="/HomePage" element={
+            <PrivateRoute>
+              <HomePage></HomePage>
+            </PrivateRoute>
+          } />
+          <Route path="/update-profile" element={
+            <PrivateRoute>
+              <UpdateProfile />
+            </PrivateRoute>
+          } />
+          <Route path="spaceship/:id" element={<SingleSpaceShip />} />
+          <Route path='*' element={<ErrorPage />} />
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          <Route path="/signup" element={<Signup />} />
+        </Routes>
+      </AppProvider>
+    </AuthProvider>
   )
 }
 

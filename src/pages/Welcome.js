@@ -1,14 +1,13 @@
-import React, { useState } from 'react'
-import img1 from '../disney-g7aea90139_1920.jpg'
-import img2 from '../starwars-g92144cadd_1920.jpg'
-import img3 from '../starwars-gac1b7a030_1920.jpg'
-import img4 from '../star-wars-g9af12affb_1920.jpg'
-import img5 from '../star-wars-g7c02c60f3_1920.jpg'
-import img6 from '../at-at-gb50a1f405_1920.jpg'
-import img7 from '../scale.jfif'
+import img1 from '../assets/disney-g7aea90139_1920.jpg'
+import img2 from '../assets/starwars-g92144cadd_1920.jpg'
+import img3 from '../assets/starwars-gac1b7a030_1920.jpg'
+import img4 from '../assets/star-wars-g9af12affb_1920.jpg'
+import img5 from '../assets/star-wars-g7c02c60f3_1920.jpg'
+import img6 from '../assets/at-at-gb50a1f405_1920.jpg'
+import img7 from '../assets/scale.jfif'
 import Spline from '@splinetool/react-spline';
-
-
+import { Footer } from '../components/Footer'
+import { Link } from 'react-router-dom'
 
 export const Welcome = () => {
   return (
@@ -27,7 +26,7 @@ export const Welcome = () => {
               Get the latest official news, trailers, and insights on a galaxy of Star Wars games and apps.
             </h3>
             <button className="hover:bg-gray-500 font-bold text-yellow-300 bg-black border rounded-full   py-2 px-4 md:py-4 md:px-8 shadow-lg uppercase ">
-              Sign up now!
+              <Link to='signup'>Sign up now!</Link>  
             </button>
           </div>
         </div>
@@ -66,15 +65,12 @@ export const Welcome = () => {
             </div>
           </div>
         </section>
-
         {/* Testimonials Section */}
         <section>
           <div className="container mx-auto px-6 py-20">
             <Spline scene="https://prod.spline.design/xQQhJK38eEshsx5c/scene.splinecode" />
           </div>
         </section>
-
-
         <section>
           <div className="container mx-auto px-6 py-20">
             <h2 className="text-4xl font-bold text-center text-gray-300 mb-10">
@@ -93,51 +89,7 @@ export const Welcome = () => {
             </div>
           </div>
         </section>
-
-        {/* test */}
-
-
-        {/* Footer*/}
-        <footer className="bg-black text-center ">
-          <div className="px-6 pt-6 ">
-            <form action="">
-              <div className=" md:grid-cols-3 gird-cols-1 gap-4 flex flex-col  md:flex-row justify-center items-center">
-                <div className="md:ml-auto md:mb-6">
-                  <p className="text-gray-200">
-                    <strong>Sign up for our newsletter</strong>
-                  </p>
-                </div>
-                <div className="md:mb-6">
-                  <input
-                    type="text"
-                    className="
-              w-full
-              px-3
-              py-1.5
-              text-base
-              font-normal
-              text-gray-700
-              bg-white bg-clip-padding
-              border border-solid border-gray-300
-              rounded
-              transition
-              ease-in-out
-              m-0
-              focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none"
-                    id="exampleFormControlInput1"
-                    placeholder="Email address" />
-                </div>
-                <div className="md:mr-auto mb-6">
-                  <button type="button" className="inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Subscribe</button>
-                </div>
-              </div>
-            </form>
-          </div>
-          <div className="text-center text-gray-200 p-4">
-            © 2021 Copyright:
-            <a className="text-gray-200" href="https://github.com/Ann-14">Github</a>
-          </div>
-        </footer>
+        <Footer/>
       </div>
     </>
   )

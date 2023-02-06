@@ -7,7 +7,6 @@ import { updateEmail, updatePassword } from "firebase/auth";
 import { useAuth } from './AuthContext'
 import { TfiEmail } from 'react-icons/tfi';
 
-
 export const UpdateProfile = () => {
     const emailRef = useRef()
     const passwordRef = useRef()
@@ -22,7 +21,6 @@ export const UpdateProfile = () => {
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError('passwords do not match')
         }
-
 
         const promises = []
         setLoading(true)
@@ -40,21 +38,18 @@ export const UpdateProfile = () => {
         }).finally(() => {
             setLoading(false)
         })
-
     }
     return (
         <>
             <div className="max-w-lg mx-auto my-10  p-8 rounded-xl shadow shadow-slate-300 text-black bg-black">
                 <h1 className="text-4xl font-medium text-slate-200">Update Profile</h1> 
                 <h3 className='text-slate-200 flex mt-2'><TfiEmail className='mr-2 mt-1'>Email:</TfiEmail> {currentUser.email}</h3>
-
                 {error &&
                     <>
                         <div>
                             <div className="max-w-xs bg-red-500 text-sm text-slate-200 rounded-md shadow-lg  mb-3 ml-3" role="alert">
                                 <div className="flex p-4">
                                     {error}
-
                                     <div className="ml-auto">
                                         <button type="button" className="inline-flex flex-shrink-0 justify-center items-center h-4 w-4 rounded-md text-white/[.5] hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-red-800 focus:ring-red-500 transition-all text-sm dark:focus:ring-offset-red-500 dark:focus:ring-red-700">
                                             <span className="sr-only">Close</span>
@@ -84,7 +79,6 @@ export const UpdateProfile = () => {
                         </label>
                         <div className="flex flex-row justify-between">
                             <button className="w-full py-3 font-medium text-white bg-indigo-600 hover:bg-indigo-500 rounded-lg border-indigo-500 hover:shadow inline-flex space-x-2 items-center justify-center" disabled={loading} type='submit'>
-
                                 <span>Update</span>
                             </button>
                         </div>

@@ -1,12 +1,7 @@
 import React, { useContext, useEffect, useState } from 'react'
 import axios from "axios";
 
-
 const AppContext = React.createContext()
-
-
-
-
 
 const AppProvider = ({ children }) => {
 
@@ -15,7 +10,6 @@ const AppProvider = ({ children }) => {
     const [pages, setPages] = useState(1)
     const [urlShip, setUrlShip] = useState("");
     const [shipIdContext, setShipIdContext] = useState('')
-    
 
     const handleNextPage = () => {
         setPages(pages => pages + 1)
@@ -29,10 +23,8 @@ const AppProvider = ({ children }) => {
         try {
             const response = await axios.get(`https://swapi.dev/api/starships/?page=${page}`)
             const { results } = response.data;
-            console.log(results)
-
+            
             if (results) {
-
                 const newSpaceShips =
                     results.map((item) => {
                         const {
@@ -62,18 +54,9 @@ const AppProvider = ({ children }) => {
         }
     }
 
-
     useEffect(() => {
         fetchSpaceShips(pages)
-
-
     }, [pages])
-
-//authentication with useReducer
-  
-
-    
-    
 
     return (
         <AppContext.Provider value={{
@@ -85,19 +68,12 @@ const AppProvider = ({ children }) => {
             setUrlShip,
             shipIdContext,
             setShipIdContext,
-            
-            
-            
-
         }}>
-
             {children}
         </AppContext.Provider>
     )
 }
-
 export const useGlobalContext = () => {
     return useContext(AppContext)
 }
-
 export { AppContext, AppProvider }

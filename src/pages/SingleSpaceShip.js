@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import axios from "axios";
 import { Loading } from "../components/Loading";
 import { Link, useParams } from "react-router-dom";
-import logo from '../logo.png'
+import logo from '../assets/logo.png'
 
 export const SingleSpaceShip = () => {
   const [loading, setLoading] = useState(false);
@@ -30,7 +30,6 @@ export const SingleSpaceShip = () => {
       console.log(error);
       setLoading(false)
     }
-
   }, [shipId]);
 
   if (loading) {

@@ -1,6 +1,6 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
-import logo from '../Star-Wars-logo.png'
+import logo from '../assets/Star-Wars-logo.png'
 import { useAuth } from '../pages/AuthContext'
 import { SlSocialSpotify } from 'react-icons/sl';
 import { SlSocialInstagram } from 'react-icons/sl';
@@ -32,10 +32,10 @@ export const Navbar = () => {
          <div>
             <nav className="flex flex-col md:flex-row md:justify-between justify-center text-white py-8 px-10 ">
                <ul className="flex justify-center md:justify-between list-none md:gap-4 gap-4">
-                  <li className=''>< SlSocialSpotify className='yellow ' /> </li>
-                  <li className=''>< SlSocialInstagram className='yellow' /></li>
-                  <li className=''>< SlSocialGithub className='yellow' /></li>
-                  <li className=''>< SlSocialYoutube className='yellow' /></li>
+                  <li className=''><a href='https://open.spotify.com/playlist/37i9dQZF1DXaUaRhCgtpCo' >< SlSocialSpotify className='yellow ' /></a> </li>
+                  <li className=''><a href='https://www.instagram.com/starwars/' >< SlSocialInstagram className='yellow' /></a></li>
+                  <li className=''><a href='https://github.com/Ann-14' >< SlSocialGithub className='yellow' /></a></li>
+                  <li className=''><a href='https://www.youtube.com/watch?v=4bpk2k1ug3M' >< SlSocialYoutube className='yellow' /></a></li>
                </ul>
                {/* ------------Hero image ------------*/}
                <div className='flex'>
