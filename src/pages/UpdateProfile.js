@@ -21,7 +21,6 @@ export const UpdateProfile = () => {
         if (passwordRef.current.value !== passwordConfirmRef.current.value) {
             return setError('passwords do not match')
         }
-
         const promises = []
         setLoading(true)
         setError('')

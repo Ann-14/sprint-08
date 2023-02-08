@@ -25,9 +25,11 @@ export const Welcome = () => {
             <h3 className=" text-lg md:text-2xl mb-8 text-gray-200">
               Get the latest official news, trailers, and insights on a galaxy of Star Wars games and apps.
             </h3>
+            <Link to='signup'>
             <button className="hover:bg-gray-500 font-bold text-yellow-300 bg-black border rounded-full   py-2 px-4 md:py-4 md:px-8 shadow-lg uppercase ">
-              <Link to='signup'>Sign up now!</Link>  
-            </button>
+              Sign up now!
+              </button>
+              </Link>  
           </div>
         </div>
         {/* Features Section */}
@@ -65,7 +67,7 @@ export const Welcome = () => {
             </div>
           </div>
         </section>
-        {/* Testimonials Section */}
+        {/* 3D Section */}
         <section>
           <div className="container mx-auto px-6 py-20">
             <Spline scene="https://prod.spline.design/xQQhJK38eEshsx5c/scene.splinecode" />
