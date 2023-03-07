@@ -34,17 +34,17 @@ export const Welcome = () => {
         </div>
         {/* Features Section */}
         <section className="container mx-auto px-6  flex flex-col justify-center">
-          <h2 className=" text-3xl md:text-4xl font-bold text-center text-gray-300 mb-8 justify-center">
+          <h2 className=" text-3xl md:text-4xl font-bold text-center text-gray-300 mb-8 md:mb-16 justify-center ">
             The Latest | Star Wars Games + Apps
           </h2>
           <div className="flex items-center flex-wrap justify-center">
             {/* section */}
             <div className="w-full md:w-1/2 px-8 order-1">
               <h4 className=" text-xl md:text-3xl text-gray-300 font-bold mb-3 ">VIRTUAL REALITY </h4>
-              <p className="mb-8">Discover new virtual reality and immersive entertainment experiences from ILMxLAB and beyond.</p>
+              <p className="mb-8 md:w-8/12">Discover new virtual reality and immersive entertainment experiences from ILMxLAB and beyond.</p>
             </div>
             {/* section */}
-            <div className="w-full md:w-1/2 px-8 md:order-1 mb-8 md:mb-0 ">
+            <div className="w-full md:w-1/2 px-8 md:order-1 mb-8 md:mb-0">
               <img src={img3} alt="Monitoring" />
             </div>
           </div>
@@ -60,7 +60,7 @@ export const Welcome = () => {
           <div className="flex items-center flex-wrap mb-20">
             <div className="w-full md:w-1/2 px-8">
               <h4 className="text-3xl text-gray-300 font-bold mb-3">More than robots</h4>
-              <p className=" mb-8">High school robotics teams participating in FIRST come together in a competition unlike any other. Now streaming, only on Disney+! </p>
+              <p className=" mb-8 md:w-8/12">High school robotics teams participating in FIRST come together in a competition unlike any other. Now streaming, only on Disney+! </p>
             </div>
             <div className="w-full md:w-1/2 px-8">
               <img src={img1} alt="Syncing" />

@@ -21,8 +21,6 @@ export const Login = () => {
         try {
             setLoading(true)
             await signInWithEmailAndPassword(auth, email, password)
-            //  await signIn(auth,email,password) con la funcion me obliga a hacer login 2 veces??
-            console.log('you are logged in');
             navigate('/HomePage')
         } catch (error) {
             setError('failed to login')
