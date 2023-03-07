@@ -27,7 +27,7 @@ export const Navbar = () => {
    const navigate = useNavigate()
 
    return (
-      <header className=" ">
+      <header>
          {/*------------ Left social icons------------ */}
          <div>
             <nav className="flex flex-col md:flex-row md:justify-between justify-center text-white py-8 px-10 ">
@@ -40,15 +40,12 @@ export const Navbar = () => {
                {/* ------------Hero image ------------*/}
                <div className='flex'>
                   <img className='flex md:w-72 md:mt-4 md:mb-4 mb-10 mt-10 justify-center' alt='starwars logo' src={logo} ></img>
-                  {/* <img className="  " src={logo} alt="web logo " /> */}
                </div>
                {/* ------------Right Buttons------------*/}
                <div className='' >
                   <div className='flex flex-wrap gap-4 justify-center md:justify-between md:px-4 '>
                      {currentUser ?
-                        <button variant='link' onClick={handleLogout}>LOG OUT</button> : <Link to='/login' className='flex mt-2'> <CiLogin className='login-icon'></CiLogin>LOG IN</Link>}
-                         {currentUser ? '' :
-                     <button className="bg-transparent p-2 rounded border border-gray-300 mr-4 hover:bg-yellow-400 hover:text-black"><Link to='/signup'>SIGN UP</Link></button>}
+                        <button variant='link' onClick={handleLogout}>LOG OUT</button> : <Link to='/login' className='flex mt-2 hover:underline'> <CiLogin className='login-icon'></CiLogin>LOG IN</Link>}
                      <Link to='/update-profile'><CgProfile className='login-icon mt-2'></CgProfile></Link>
                   </div>
                </div>
