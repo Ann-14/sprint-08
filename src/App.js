@@ -1,22 +1,11 @@
 
 import { Route, Routes } from "react-router-dom";
 import { Navbar } from "./components/Navbar";
-import { AppProvider } from "./Context";
-import AuthProvider from "./pages/AuthContext";
-import { ErrorPage } from "./pages/ErrorPage";
-import { ForgotPassword } from "./pages/ForgotPassword";
-import { HomePage } from "./pages/HomePage";
-import { Login } from "./pages/Login";
-import PrivateRoute from "./pages/PrivateRoute";
-import { PublicRoute } from "./pages/PublicRoute";
-import { Signup } from "./pages/Signup";
-import { SingleSpaceShip } from "./pages/SingleSpaceShip";
-import { UpdateProfile } from "./pages/UpdateProfile";
-import { Welcome } from "./pages/Welcome";
-
+import AuthProvider from "./context/AuthContext";
+import { AppProvider } from "./context/Context";
+import { ErrorPage, ForgotPassword, HomePage, Login, PublicRoute, Signup, SingleSpaceShip, Welcome, PrivateRoute, UpdateProfile} from "./pages";
 
 function App() {
-
   return (
     <AuthProvider>
       <AppProvider>

@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 
 import { auth } from "../firebase";
 import { updateEmail, updatePassword } from "firebase/auth";
-import { useAuth } from './AuthContext'
+import { useAuth } from '../context/AuthContext'
 import { TfiEmail } from 'react-icons/tfi';
 
 export const UpdateProfile = () => {

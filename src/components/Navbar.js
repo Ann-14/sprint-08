@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Link, useNavigate } from 'react-router-dom'
 import logo from '../assets/Star-Wars-logo.png'
-import { useAuth } from '../pages/AuthContext'
+import { useAuth } from '../context/AuthContext'
 import { SlSocialSpotify } from 'react-icons/sl';
 import { SlSocialInstagram } from 'react-icons/sl';
 import { SlSocialGithub } from 'react-icons/sl';

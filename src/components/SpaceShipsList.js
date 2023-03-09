@@ -1,6 +1,6 @@
 
 import { Loading } from './Loading'
-import { useGlobalContext } from '../Context'
+import { useGlobalContext } from '../context/Context'
 import { SpaceShip } from './SpaceShip'
 
 import { MdOutlineNavigateNext } from 'react-icons/md';
