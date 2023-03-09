@@ -1,8 +1,7 @@
 import React, { useState } from 'react'
 import { useRef } from 'react'
-
 import { Link } from 'react-router-dom'
-import { useAuth } from './AuthContext'
+import { useAuth } from '../context/AuthContext'
 
 
 export const ForgotPassword = () => {
@@ -27,12 +26,10 @@ export const ForgotPassword = () => {
             setError('failed to reset password')
             console.log(error)
         }
-
         setLoading(false)
     }
     return (
         <>
-
             <div className="max-w-lg mx-auto my-10 bg-white p-8 rounded-xl shadow shadow-slate-300">
                 <h1 className="text-4xl font-medium">Password Reset</h1>
                 {error &&
